@@ -39,6 +39,15 @@ angular
             .state('pagoRutas', {
                 url: '/pagoRutas',
                 templateUrl: 'templates/pagoRutas.html'
+            })
+            .state('infoRutas', {
+                url: '/infoRutas',
+                templateUrl: 'templates/infoRutas.html'
+            })
+            .state('creaRuta', {
+                url: '/creaRuta',
+                templateUrl: 'templates/creaRuta.html'
             });
+
     }
 ]);
