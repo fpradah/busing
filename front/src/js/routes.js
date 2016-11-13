@@ -3,7 +3,14 @@
 /**
  * Route configuration for the RDash module.
  */
-angular.module('busingApp').config(['$stateProvider', '$urlRouterProvider',
+angular
+.module('busingApp',[
+    'ui.bootstrap', 
+    'ui.router', 
+    'ngCookies'
+   
+    ])
+.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
 
         // For unmatched routes
@@ -17,7 +24,8 @@ angular.module('busingApp').config(['$stateProvider', '$urlRouterProvider',
             })
             .state('login', {
                 url: '/login',
-                templateUrl: 'templates/login.html'
+                templateUrl: 'templates/login.html',
+                
             })
             .state('busquedaRutas', {
                 url: '/busquedaRutas',
