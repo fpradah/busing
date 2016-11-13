@@ -3,9 +3,9 @@
  */
 
 angular.module('busingApp')
-    .controller('MasterCtrl', ['$scope', '$cookieStore', MasterCtrl]);
+    .controller('HomeCtrl', ['$scope', '$cookieStore', HomeCtrl]);
 
-function MasterCtrl($scope, $cookieStore) {
+function HomeCtrl($scope, $cookieStore) {
     /**
      * Sidebar Toggle & Cookie Control
      */
@@ -36,4 +36,8 @@ function MasterCtrl($scope, $cookieStore) {
     window.onresize = function() {
         $scope.$apply();
     };
+
+    //alert("Entra");
+
+
 }
