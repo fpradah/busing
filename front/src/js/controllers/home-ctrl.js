@@ -37,7 +37,5 @@ function HomeCtrl($scope, $cookieStore) {
         $scope.$apply();
     };
 
-    //alert("Entra");
-
-
+    
 }
