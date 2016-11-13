@@ -1,1 +1,47 @@
-<h1>Home HTML</h1>
+<style>
+	 .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+  .toggle.ios .toggle-handle { border-radius: 20px; }
+</style>
+
+<form>
+  <div class="form-inline col-md-12" style="margin-top: 10px;">
+  	<div class="col-md-4"><b>PLANEA TU RUTA: </b></div>
+  	<div class="col-md-4"><b>¿SOBRE QUE HORA TE GUSTARÍA LLEGAR?: </b></div>
+  	<div class="col-md-4"><b>TIPO DE RUTA: </b></div>
+  </div>
+  
+  <div class="form-inline col-md-12" style="margin-top: 10px;">
+  	<div class="form-group col-md-4">
+	    <label for="desde">Desde: </label>
+	    <input type="text" class="form-control" id="desde" placeholder="Moreno Nieto, 2, Madrid">
+	</div>
+	<div class="form-group col-md-4">
+	    <label for="desde">Hora llegada inicial: </label>
+	    <input type="text" class="form-control" id="desde" placeholder="Hora aprox. llegada">
+	</div>
+	<div class="form-group col-md-4">
+		Laboral: <input type="checkbox" checked data-toggle="toggle">
+	</div>
+  </div>
+  
+  
+  <div class="form-inline col-md-12" style="margin-top: 10px;">
+  	<div class="form-group col-md-4">
+	    <label for="hasta">Hasta: </label>
+	    <input type="email" class="form-control" id="hasta" placeholder="Calle de María Tubau, 10, Las Tablas">
+	</div>
+	<div class="form-group col-md-4">
+	    <label for="desde">Hora llegada final: </label>
+	    <input type="text" class="form-control" id="desde" placeholder="Hora aprox. llegada">
+	</div>
+	<div class="form-group col-md-4">
+		Fin de semana:  <input type="checkbox" checked data-toggle="toggle">
+	</div>
+  </div>
+ <br/>
+
+  <div class="form-inline col-md-12" style="margin-top: 10px;">
+  	<button type="submit" class="btn btn-default">Buscar Ruta</button>
+  </div>
+</form>
+
