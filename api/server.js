@@ -13,7 +13,7 @@ app.use(cors());
 user = require('./routes/user')(app);
 ruta = require('./routes/ruta')(app);
 
-var connection = mysql.createConnection({
+var pool  = mysql.createPool({
   host     : config.RDS_HOSTNAME,
   user     : config.RDS_USERNAME,
   password : config.RDS_PASSWORD,
@@ -22,7 +22,7 @@ var connection = mysql.createConnection({
 
 app.listen(3000, function() {
   console.log("Database Callma Server running on http://localhost:3000");
-  connection.connect(function(err) {
+  pool.getConnection(function(err, connection) {
     if (err) {
       console.error('ERROR: connecting to Database : ' + err.stack);
       return;
