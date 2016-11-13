@@ -1,6 +1,5 @@
 <a ui-sref="login" class="" role="" style="float:right">Mis Rutas</a>
 
-
 <form>
   <div class="form-inline col-md-12" style="margin-top: 10px;">
   	<div class="col-md-4"><b>PLANEA TU RUTA: </b></div>
@@ -11,14 +10,14 @@
   <div class="form-inline col-md-12" style="margin-top: 10px;">
   	<div class="form-group col-md-4">
 	    <label for="desde">Desde: </label>
-	    <input type="text" class="form-control" id="desde" placeholder="Moreno Nieto, 2, Madrid">
+	    <input type="text" class="form-control" id="desde" ng-model="ruta.desde" placeholder="Moreno Nieto, 2, Madrid">
 	</div>
 	<div class="form-group col-md-4">
 	    <label for="desde">Hora llegada inicial: </label>
-	    <input type="text" class="form-control" id="desde" placeholder="Hora aprox. llegada">
+	    <input type="text" class="form-control" id="desde" ng-model="ruta.time_start" placeholder="Hora aprox. llegada">
 	</div>
 	<div class="form-group col-md-4">
-		Laboral: <input type="checkbox" checked data-toggle="toggle">
+		Laboral: <input type="checkbox" checked data-toggle="toggle" ng-model="ruta.type">
 	</div>
   </div>
   
@@ -26,11 +25,11 @@
   <div class="form-inline col-md-12" style="margin-top: 10px;">
   	<div class="form-group col-md-4">
 	    <label for="hasta">Hasta: </label>
-	    <input type="email" class="form-control" id="hasta" placeholder="Calle de María Tubau, 10, Las Tablas">
+	    <input type="text" class="form-control" id="hasta" placeholder="Calle de María Tubau, 10, Las Tablas" ng-model="ruta.hasta">
 	</div>
 	<div class="form-group col-md-4">
 	    <label for="desde">Hora llegada final: </label>
-	    <input type="text" class="form-control" id="desde" placeholder="Hora aprox. llegada">
+	    <input type="text" class="form-control" id="desde" placeholder="Hora aprox. llegada" ng-model="ruta.time_end">
 	</div>
 	<div class="form-group col-md-4">
 		Fin de semana:  <input type="checkbox" checked data-toggle="toggle">
@@ -38,10 +37,9 @@
   </div>
  <br/>
 
-  <div class="form-inline col-md-12" style="margin-top: 10px;">
+  <div class="form-inline col-md-12" ng-click="busquedaRutas()" style="margin-top: 10px;" >
   	
-  	<a ui-sref="busquedaRutas" class="btn btn-info" role="button">Buscar Ruta</a>
+  	<a  class="btn btn-info" role="button">Buscar Ruta</a>
 
   </div>
 </form>
-
