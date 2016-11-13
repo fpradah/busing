@@ -8,7 +8,6 @@ angular
     'ui.bootstrap', 
     'ui.router', 
     'ngCookies'
-   
     ])
 .config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
@@ -21,7 +20,7 @@ angular
             .state('home', {
                 url: '/',
                 templateUrl: 'templates/home.html',
-                controller: 'HomeCtrl'
+                controller: 'BuscadorCtrl'
             })
             .state('login', {
                 url: '/login',

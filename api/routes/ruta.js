@@ -29,6 +29,26 @@ module.exports = function(app) {
 		});
 	}
 
+	findById = function(req,res) {
+		var user_id = req.params.id;
+		pool.query('SELECT * FROM ruta WHERE id = '+user_id, function(err, row, fields) {
+		  if (err) throw err;
+		  var user = JSON.stringify(row[0]);
+		  res.status(200).send(user);
+		});
+	}
+
+	findByRuta = function(req,res) {
+		var ruta = req.body;
+		var query = "SELECT * FROM ruta WHERE desde LIKE '%"+ruta.desde+"%' and hasta LIKE '%"+ruta.hasta+"%'";
+		console.log(query);
+		pool.query(query, function(err, rows, fields) {
+		  if (err) throw err;
+		  var user = JSON.stringify(rows);
+		  res.status(200).send(user);
+		});
+	}
+
 	add = function(req,res) {
 		pool.query("INSERT INTO ruta SET desde = '"+req.body.desde+"', hasta = '"+req.body.hasta+"',time_start = '"+req.body.time_start+"',time_end = '"+req.body.time_end+"',type = '"+req.body.type+"',id_user = '"+req.body.id_user+"',activa = '"+req.body.activa+"'"
 		, function(err, row, fields) {
@@ -40,6 +60,8 @@ module.exports = function(app) {
 
 	// Devolvemos todos las rutas
 	app.get('/ruta', findAll);
+	// Devolvemos todos los coincidentes
+	app.post('/ruta-find', findByRuta);
 	// Devolvemos la ruta en particular
 	app.get('/ruta/:id', findById);
 	// Creamos una ruta

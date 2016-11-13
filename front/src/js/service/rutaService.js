@@ -1,13 +1,19 @@
 angular
         .module('busingApp')
-        .factory('RutaService', ['$http','$localStorage',RutaService]);
+        .factory('RutaService', ['$http',RutaService]);
 
-    function RutaService($http, $localStorage) {
+    function RutaService($http) {
         var service = {};
 
         var backendUrl = "52.16.29.49:3000";
 
         service.getAll = getAll;
+
+        service.get = get;
+
+        service.add = add;
+
+        service.find = find;
 
         return service;
 
@@ -31,8 +37,18 @@ angular
             });
         }
 
-        function add(grupo, callback){
-            $http.post("http://"+BACKEND_URL+"/ruta",ruta)
+        function add(ruta, callback){
+            $http.post("http://"+backendUrl+"/ruta",ruta)
+                .success(function(data, status){
+                    callback(data);
+                })
+                .error(function(data, status){
+                    callback(false);
+                });
+        }
+
+        function find(ruta, callback){
+            $http.post("http://"+backendUrl+"/ruta-find",ruta)
                 .success(function(data, status){
                     callback(data);
                 })
